@@ -1,8 +1,15 @@
+import React from "react";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import Menu from "./Components/Menu";
+// import "/index.css";
 function App() {
     return (
-        <>
-            <h1>Hello le monde</h1>
-        </>
+        <div className="container">
+            <Header />
+            <Menu />
+            <Footer />
+        </div>
     );
 }
 
