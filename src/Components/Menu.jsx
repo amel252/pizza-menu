@@ -1,4 +1,5 @@
 import React from "react";
+import Pizza from "./Pizza";
 
 function Menu() {
     const pizzaData = [
@@ -48,8 +49,12 @@ function Menu() {
 
     return (
         <main className="menu">
-            <h2>Our menu</h2>
-            <img src="pizzas/focaccia.jpg" alt="" />
+            <h2>Our Menu</h2>
+            <ul className="pizzas">
+                {pizzaData.map((pizza) => (
+                    <Pizza pizzaObj={pizza} key={pizza.name} />
+                ))}
+            </ul>
         </main>
     );
 }

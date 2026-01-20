@@ -1,10 +1,27 @@
 import React from "react";
 
 function Footer() {
+    const hour = new Date().getHours();
+    const openHour = 12;
+    const closeHour = 22;
+    const isOpen = hour >= openHour && hour <= closeHour;
+
     return (
         <footer className="footer">
-            {new Date().toLocaleTimeString()}
-            <p>We are currently open from 10am to 4pm</p>
+            {/* 1eme maniere */}
+            {/* {isOpen ? "Open" : "Close"} */}
+            {/*tout dépend l'heure déclaré , ca m'affiche soit open soit close */}
+
+            {/* 2eme maniere  */}
+            {isOpen && (
+                <div className="order">
+                    <p>
+                        We're open until {closeHour}:00 come visit us or order
+                        online
+                    </p>
+                    <button className="btn">Order</button>
+                </div>
+            )}
         </footer>
     );
 }
